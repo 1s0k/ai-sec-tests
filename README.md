@@ -43,8 +43,10 @@ promptfoo view
 ### garak: vulnerability scan
 
 ```bash
-garak --target_type ollama --target_name lab-target --probes promptinject
+garak --target_type ollama --target_name lab-target-scan -G garak/ollama.json --probes promptinject
 ```
+
+garak caps output tokens and cannot turn off Qwen3 thinking, so against `lab-target` every reply comes back empty. Scan `lab-target-scan` instead: the same target with thinking disabled, built by `ollama/build-scan.sh` in ai-sec-lab. `garak/ollama.json` raises the request timeout to 300 s.
 
 ## Layout
 
@@ -52,6 +54,8 @@ garak --target_type ollama --target_name lab-target --probes promptinject
 |---|---|
 | `promptfooconfig.yaml` | promptfoo red team config (local generation and grading) |
 | `pyrit_scripts/` | PyRIT attack scripts |
+| `garak/ollama.json` | garak generator options for Ollama (longer timeout) |
+| `garak/quick.yaml` | Quick garak run: 20 prompts per probe, 1 generation (add `--config garak/quick.yaml`) |
 | `.github/workflows/ci.yml` | Validates configs and scripts on every push |
 
 ## License

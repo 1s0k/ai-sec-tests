@@ -1,0 +1,5 @@
+# Quick garak run: ~20 prompts per probe, 1 generation each (~5 min for promptinject on M1).
+# Usage: garak --config garak/quick.yaml --target_type ollama --target_name lab-target-scan -G garak/ollama.json --probes promptinject
+run:
+  generations: 1
+  soft_probe_prompt_cap: 20

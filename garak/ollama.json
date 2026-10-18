@@ -1,0 +1,6 @@
+{
+  "ollama": {
+    "OllamaGeneratorChat": {"timeout": 300},
+    "OllamaGenerator": {"timeout": 300}
+  }
+}
