@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate promptfoo config
+        run: npx --yes promptfoo@0.124.1 validate -c promptfooconfig.yaml
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Check PyRIT scripts compile
+        run: uv run --python 3.12 --no-project python -m py_compile pyrit_scripts/*.py
