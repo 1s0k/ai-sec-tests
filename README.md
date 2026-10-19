@@ -14,7 +14,7 @@ The target is a copy of the one in my lab project (ai-sec-lab, not yet public), 
 
 ## Quick start
 
-Requirements: [Ollama](https://ollama.com), [uv](https://github.com/astral-sh/uv), Node.js with `promptfoo`, `garak`.
+Requirements: [Ollama](https://ollama.com), [uv](https://github.com/astral-sh/uv), [promptfoo](https://www.promptfoo.dev) (Node.js) and [garak](https://github.com/NVIDIA/garak).
 
 ```bash
 ollama pull qwen3:8b
